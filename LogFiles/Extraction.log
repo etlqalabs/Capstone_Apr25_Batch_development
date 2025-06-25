@@ -1,0 +1,38 @@
+2025-06-25 09:56:05,197-INFO-sales data extraction started....
+2025-06-25 09:56:05,199-ERROR-Error encounted while extrcting the sales data file,[Errno 2] No such file or directory: 'SourceSystems/sales_data_Linux_remot.csv'
+Traceback (most recent call last):
+  File "D:\Capstone_Apr_Batch_Development\CodeBase\extract.py", line 21, in extract_sales_data_from_file
+    df = pd.read_csv("SourceSystems/sales_data_Linux_remot.csv")
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+  File "C:\Python310\lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'SourceSystems/sales_data_Linux_remot.csv'
+2025-06-25 09:56:05,199-INFO-product data extraction started....
+2025-06-25 09:56:05,199-ERROR-Error encounted while extrcting the product data file,[Errno 2] No such file or directory: 'SourceSystems/product_data.cs'
+Traceback (most recent call last):
+  File "D:\Capstone_Apr_Batch_Development\CodeBase\extract.py", line 31, in extract_product_data_from_file
+    df = pd.read_csv("SourceSystems/product_data.cs")
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+  File "C:\Python310\lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'SourceSystems/product_data.cs'
+2025-06-25 09:56:05,199-INFO-supplier data extraction started....
+2025-06-25 09:56:05,529-INFO-supplier data extraction completed....
+2025-06-25 09:56:05,529-INFO-inventory data extraction started....
+2025-06-25 09:56:05,897-INFO-inventory data extraction completed....
+2025-06-25 09:56:05,897-INFO-stores data extraction started....
+2025-06-25 09:56:06,753-INFO-stores data extraction completed....
