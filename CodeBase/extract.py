@@ -18,17 +18,18 @@ logger = logging.getLogger(__name__)
 def extract_sales_data_from_file():
     try:
         logger.info("sales data extraction started....")
-        df = pd.read_csv("SourceSystems/sales_data_Linux_remot.csv")
+        df = pd.read_csv("SourceSystems/sales_data_Linux_remote.csv")
         df.to_sql("staging_sales",mysql_engine,if_exists='replace',index=False)
         logger.info("sales data extraction completed....")
     except Exception as e:
         logger.error(f"Error encounted while extrcting the sales data file,{e}",exc_info=True)
 
 
+
 def extract_product_data_from_file():
     try:
         logger.info("product data extraction started....")
-        df = pd.read_csv("SourceSystems/product_data.cs")
+        df = pd.read_csv("SourceSystems/product_data.csv")
         df.to_sql("staging_product",mysql_engine,if_exists='replace',index=False)
         logger.info("product data extraction completed....")
     except Exception as e:
@@ -48,7 +49,7 @@ def extract_inventory_data_from_file():
     try:
         logger.info("inventory data extraction started....")
         df = pd.read_xml("SourceSystems/inventory_data.xml",xpath=".//item")
-        df.to_sql("staging_supplier",mysql_engine,if_exists='replace',index=False)
+        df.to_sql("staging_inventory",mysql_engine,if_exists='replace',index=False)
         logger.info("inventory data extraction completed....")
     except Exception as e:
         logger.error(f"Error encounted while extrcting the inventory data file,{e}",exc_info=True)
@@ -63,10 +64,14 @@ def extract_stores_data_from_oracle():
     except Exception as e:
         logger.error(f"Error encounted while extrcting the stores data from oracle,{e}",exc_info=True)
 
+
+
+
 if __name__ == "__main__":
     extract_sales_data_from_file()
     extract_product_data_from_file()
     extract_supplier_data_from_file()
     extract_inventory_data_from_file()
     extract_stores_data_from_oracle()
+
 
