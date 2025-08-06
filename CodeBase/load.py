@@ -84,8 +84,8 @@ def load_inventory_level_by_store_table():
 
 if __name__ == "__main__":
     logger.info("Data Load started ....")
-    #load_fact_sales_table()
-    #load_fact_inventory_table()
-    #load_monthly_sales_summary_table()
+    load_fact_sales_table()
+    load_fact_inventory_table()
+    load_monthly_sales_summary_table()
     load_inventory_level_by_store_table()
     logger.info("Data Load completed ....")
